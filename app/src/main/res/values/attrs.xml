@@ -1,0 +1,54 @@
+<resources>
+
+    <declare-styleable name="CircleIndicator">
+        <attr name="ci_width" format="dimension"/>
+        <attr name="ci_height" format="dimension"/>
+        <attr name="ci_margin" format="dimension"/>
+        <attr name="ci_animator" format="reference"/>
+        <attr name="ci_animator_reverse" format="reference"/>
+        <attr name="ci_drawable" format="reference"/>
+        <attr name="ci_drawable_unselected" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="RoyalSwitch">
+        <!-- 开关打开颜色 -->
+        <attr name="checked_color" format="color" />
+        <!-- 开关关闭颜色 -->
+        <attr name="unchecked_color" format="color" />
+        <!-- 开关图片资源 -->
+        <attr name="thumb" format="dimension" />
+
+    </declare-styleable>
+
+    <declare-styleable name="FluidLayout">
+
+        <attr name="gravity" >
+
+            <flag name="top" value="0x30" />
+
+            <flag name="bottom" value="0x50" />
+
+            <flag name="center" value="0x11" />
+
+        </attr>
+
+    </declare-styleable>
+
+
+
+    <declare-styleable name="FluidLayout_Layout">
+
+        <attr name="layout_gravity">
+
+            <flag name="top" value="0x30" />
+
+            <flag name="bottom" value="0x50" />
+
+            <flag name="center" value="0x11" />
+
+        </attr>
+
+    </declare-styleable>
+
+</resources>

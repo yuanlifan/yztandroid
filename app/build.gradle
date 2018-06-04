@@ -1,21 +1,46 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.ylfcf.yzt"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        buildConfigField "String", "UM_KEY", UM_KEY
+        buildConfigField "String", "UM_CHINNEL", UM_CHINNEL
+        buildConfigField "String", "SHARE_WEIXIN_ID", SHARE_WEIXIN_ID //WEIXIN ID
+        buildConfigField "String", "SHARE_WEIXIN_SECRET", SHARE_WEIXIN_SECRET //微信分享secret
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
 }
 
 dependencies {
@@ -29,13 +54,25 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //友盟分享
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
 
-//    compile 'com.jakewharton:butterknife:8.7.0'
-//    compile 'com.google.dagger:dagger:2.11'
-//    //okhttp
-//    compile 'com.squareup.okhttp3:okhttp:3.8.1'
-//    compile 'com.google.code.gson:gson:2.8.1'
-//    //glide
-//    compile 'com.github.bumptech.glide:glide:3.8.0'
+    compile 'com.android.support:multidex:1.0.0'
+    //自动适配方案
+    compile 'com.zhy:autolayout:1.4.5'
+
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+
+    //统计SDK必须依赖基础组件库。所以需要加入对应依赖
+//    compile 'com.umeng.sdk:common:latest.integration'
+//    compile 'com.umeng.sdk:analytics:latest.integration'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
 
 }

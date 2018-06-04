@@ -1,30 +1,30 @@
-# buildÎÄ¼ş¼Ğ
+# buildæ–‡ä»¶å¤¹
 /build
-# Éú³É.apk°²×°°ü
+# ç”Ÿæˆ.apkå®‰è£…åŒ…
 *.apk
-# °üº¬.apkµÄÎÄ¼ş¼Ğ
+# åŒ…å«.apkçš„æ–‡ä»¶å¤¹
 /app/ApkDir
-# ±¾µØ»·¾³ÅäÖÃÊôĞÔÎÄ¼ş
+# æœ¬åœ°ç¯å¢ƒé…ç½®å±æ€§æ–‡ä»¶
 local.properties
-# ideaÎÄ¼ş
+# ideaæ–‡ä»¶
 .idea
-# .iml ÎÄ¼ş
+# .iml æ–‡ä»¶
 *.iml
-# gradle ÊôĞÔÎÄ¼ş
+# gradle å±æ€§æ–‡ä»¶
 #gradle.properties
-# ÎÄ¼ş¼ĞÄÚ²¿buildÎÄ¼ş¼Ğ
+# æ–‡ä»¶å¤¹å†…éƒ¨buildæ–‡ä»¶å¤¹
 */build
 
-# ½ØÍ¼&traceViewÎÄ¼ş
+# æˆªå›¾&traceViewæ–‡ä»¶
 captures/
-#vi ²úÉúµÄ»Ö¸´ÎÄ¼ş
+#vi äº§ç”Ÿçš„æ¢å¤æ–‡ä»¶
 *.swo
 *.swp
-# .gradleÎÄ¼ş¼Ğ
+# .gradleæ–‡ä»¶å¤¹
 .gradle
-# ÆäËû
+# å…¶ä»–
 *~
-#.gitignore±¾Éí
+#.gitignoreæœ¬èº«
 #.gitignore
 #gradle
 #build.gradle

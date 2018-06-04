@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchActivityStyle">
+
+    <com.ylfcf.yzt.view.CustomViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.ylfcf.yzt.view.CircleIndicator
+        android:id="@+id/ci_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:minHeight="12dp"
+        app:ci_drawable="@drawable/yindaotu_yuan_sel"
+        app:ci_drawable_unselected="@drawable/yindaotu_yuan" />
+
+</FrameLayout>
