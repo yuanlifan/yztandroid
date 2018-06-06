@@ -12,13 +12,14 @@ import com.umeng.analytics.MobclickAgent;
 import com.ylfcf.yzt.AppStackManager;
 import com.ylfcf.yzt.http.NethHandle;
 import com.ylfcf.yzt.utils.SharedPreferencesHelper;
+import com.zhy.autolayout.AutoLayoutActivity;
 
 
 /**
  * @author guozhangyu  create by 2017/8/24 14:27
  * @Description
  */
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AutoLayoutActivity {
 
     protected AppStackManager appStackManager = AppStackManager.getAppManager();
     protected NethHandle      netHandler      = NethHandle.getNethHandle();

@@ -3,4 +3,7 @@
     <string name="app_name">一账通</string>
     <string name="plz_enter_content">请输入文本！</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

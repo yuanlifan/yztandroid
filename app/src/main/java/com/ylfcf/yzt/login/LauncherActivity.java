@@ -8,6 +8,7 @@ import com.ylfcf.yzt.R;
 import com.ylfcf.yzt.appconfig.AppSpContact;
 import com.ylfcf.yzt.base.BasePagerAdapter;
 import com.ylfcf.yzt.base.BaseViewPagerFragment;
+import com.ylfcf.yzt.home.MainActivity;
 import com.ylfcf.yzt.utils.SharedPreferencesHelper;
 import com.ylfcf.yzt.utils.StringHelper;
 import com.ylfcf.yzt.utils.Utils;
@@ -50,14 +51,16 @@ public class LauncherActivity extends FragmentActivity {
 //            }
 //        }
         if (!isFirstLauncher) {//不是第一次启动
-            String loginId = SharedPreferencesHelper.getInstance().getString(AppSpContact.SP_KEY_LOGIN_ID);
-            if (StringHelper.isEmpty(loginId)) {
+//            String loginId = SharedPreferencesHelper.getInstance().getString(AppSpContact.SP_KEY_LOGIN_ID);
+//            if (StringHelper.isEmpty(loginId)) {
 //                Intent intent = new Intent(this, LoadingNextActivity.class);
 //                startActivity(intent);
-            } else {
+//            } else {
 //                Intent intent = new Intent(this, LoadingActivity.class);
 //                startActivity(intent);
-            }
+//            }
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
             finish();
         } else {
             setContentView(R.layout.activity_launcher);

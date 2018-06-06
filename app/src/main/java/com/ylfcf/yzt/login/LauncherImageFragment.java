@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.ylfcf.yzt.R;
 import com.ylfcf.yzt.base.BaseViewPagerFragment;
+import com.ylfcf.yzt.home.MainActivity;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -84,11 +85,11 @@ public class LauncherImageFragment extends BaseViewPagerFragment {
         }
     }
 
-//    @OnClick(R.id.iv_enter)
-//    void onHomeScreen() {
-//        if (mPosition == 5) {
-//            startActivity(new Intent(mContext, LoadingNextActivity.class));
-//            getActivity().finish();
-//        }
-//    }
+    @OnClick(R.id.iv_enter)
+    void onHomeScreen() {
+        if (mPosition == 5) {
+            startActivity(new Intent(mContext, MainActivity.class));
+            getActivity().finish();
+        }
+    }
 }
