@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class BasePagerAdapter extends FragmentPagerAdapter {
     private final ArrayList<BaseViewPagerFragment> mFragments;
-    private       String[]                         mTitles;
+    public        String[]                         mTitles;
 
 
     public BasePagerAdapter(FragmentManager fm, ArrayList<BaseViewPagerFragment> fragments) {
