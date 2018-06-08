@@ -1,13 +1,73 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ylfcf.yzt.home.fragment.YztHomepageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="82px">
 
-</FrameLayout>
+        <FrameLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/sliding_tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:background="@color/blue_3c"
+                tl:tl_textSelectColor="#cf3b3b"
+                tl:tl_textUnselectColor="@color/primary_text"
+                tl:tl_indicator_color="#cf3b3b"
+                tl:tl_textsize="14sp"
+                tl:tl_tab_space_equal="true"
+                tl:tl_indicator_width="66dp"
+                tl:tl_indicator_height="3dp" />
+            <!--tl:tl_indicator_corner_radius="1.5dp"-->
+            <!--tl:tl_indicator_width_equal_title="true"-->
+
+            <TextView
+                android:id="@+id/tv_pingdao"
+                android:text="全部频道"
+                android:paddingLeft="22px"
+                android:textSize="14sp"
+                android:background="@color/white"
+                android:textColor="@color/primary_text"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:visibility="invisible"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:background="@color/white"
+            android:src="@drawable/arrow"
+            android:paddingLeft="16px"
+            android:paddingRight="16px"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

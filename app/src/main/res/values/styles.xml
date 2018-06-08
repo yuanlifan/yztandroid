@@ -178,9 +178,9 @@
         <!--<item name="android:windowBackground">@color/transparent</item>-->
     <!--</style>-->
 
-    <!--<style name="dialog_animation">-->
-        <!--<item name="android:windowEnterAnimation">@anim/dialog_in</item>-->
-        <!--<item name="android:windowExitAnimation">@anim/dialog_exit</item>-->
-    <!--</style>-->
+    <style name="dialog_animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
 
 </resources>
