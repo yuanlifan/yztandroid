@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tabs"
     android:layout_width="match_parent"
-    android:layout_height="100px"
+    android:layout_height="@dimen/y46"
     android:layout_gravity="bottom"
     android:orientation="horizontal"
     android:visibility="visible">

@@ -11,7 +11,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/tool_bar"
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="@dimen/y46"
         android:textColor="@color/white"
         android:fitsSystemWindows="true"
         app:theme="@style/AppTheme.Toolbar"
@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/tv_title"
             android:text="一账通"
-            android:textSize="16sp"
+            android:textSize="@dimen/x14"
             android:textColor="@color/primary_text"
             android:layout_gravity="center"
             android:layout_width="wrap_content"

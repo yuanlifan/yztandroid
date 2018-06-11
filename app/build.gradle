@@ -60,20 +60,17 @@ dependencies {
     compile files('libs/umeng_social_tool.jar')
     compile 'com.android.support:multidex:1.0.0'
     //自动适配方案
-    compile 'com.zhy:autolayout:1.4.5'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'com.github.bumptech.glide:glide:3.6.1'
-    //统计SDK必须依赖基础组件库。所以需要加入对应依赖
-    //    compile 'com.umeng.sdk:common:latest.integration'
-    //    compile 'com.umeng.sdk:analytics:latest.integration'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
     compile 'com.umeng.analytics:analytics:latest.integration'
-
     implementation project(':verticaltablayout')
-//    compile 'me.kaelaela:verticalviewpager:1.0.0@aar'
+    //加载中，加载失败，空布局，网络异常，内容布局
+    implementation 'com.classic.common:multiple-status-view:1.4'
     //常用标签
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-
 }

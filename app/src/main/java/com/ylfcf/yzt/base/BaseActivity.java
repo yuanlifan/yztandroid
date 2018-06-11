@@ -16,10 +16,10 @@ import com.zhy.autolayout.AutoLayoutActivity;
 
 
 /**
- * @author guozhangyu  create by 2017/8/24 14:27
+ * @author yangjinxin  create by 2017/8/24 14:27
  * @Description
  */
-public class BaseActivity extends AutoLayoutActivity {
+public class BaseActivity extends AppCompatActivity {
 
     protected AppStackManager appStackManager = AppStackManager.getAppManager();
     protected NethHandle      netHandler      = NethHandle.getNethHandle();

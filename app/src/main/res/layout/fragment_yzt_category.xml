@@ -1,4 +1,4 @@
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
@@ -7,13 +7,13 @@
 
     <q.rorbin.verticaltablayout.VerticalTabLayout
         android:id="@+id/tablayout"
-        android:layout_width="180px"
+        android:layout_width="@dimen/x158"
         android:layout_height="match_parent"
         android:background="#ffffff"
         android:visibility="visible"
         app:indicator_color="#dc3f3f"
         app:indicator_gravity="left"
-        app:tab_height="100px"
+        app:tab_height="@dimen/x36"
         app:tab_mode="scrollable" />
 
     <com.ylfcf.yzt.view.verticalviewpager.VerticalViewPager
@@ -22,4 +22,4 @@
         android:background="@color/color_bg"
         android:layout_height="match_parent" />
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

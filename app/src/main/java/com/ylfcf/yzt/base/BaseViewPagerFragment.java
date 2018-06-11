@@ -2,7 +2,7 @@ package com.ylfcf.yzt.base;
 
 
 /**
- * @author guozhangyu  create by 2017/8/29 13:20
+ * @author yangjinxin  create by 2017/8/29 13:20
  * @Description
  */
 public abstract class BaseViewPagerFragment extends BaseFragment {
