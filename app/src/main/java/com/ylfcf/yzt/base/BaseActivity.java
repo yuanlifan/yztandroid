@@ -12,7 +12,6 @@ import com.umeng.analytics.MobclickAgent;
 import com.ylfcf.yzt.AppStackManager;
 import com.ylfcf.yzt.http.NethHandle;
 import com.ylfcf.yzt.utils.SharedPreferencesHelper;
-import com.zhy.autolayout.AutoLayoutActivity;
 
 
 /**
