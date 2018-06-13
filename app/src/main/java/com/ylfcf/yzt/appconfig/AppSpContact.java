@@ -15,12 +15,7 @@ public class AppSpContact {
     public static final String SP_KEY_USER_DESCRIPTION       = "userDescription";//用户简介
     public static final String SP_KEY_USER_TOKEN             = "userToken";//用户凭证
     public static final String SP_KEY_USER_TYPE              = "userType";//用户手机号码
-    public static final String SP_KEY_LOADINGIMAGE_TIME      = "loadingInageTime";//启动页更换时间
-    public static final String SP_KEY_LOADINGIMAGE_SECOND    = "loadingInageSecond";//启动页播放时间
-    public static final String SP_KEY_LOADINGIMAGE_URL       = "loadingInageUrl";//启动页更换时间
-    public static final String SP_KEY_LOADINGIMAGE_TYPE      = "loadingInageType";//启动页类型
-    public static final String SP_KEY_LOADINGIMAGE_LOVE_TYPE = "loadingInageLoveType";//启动页类型
-    public static final String SP_KEY_LOADINGIMAGE_USER_TYPE = "loadingInageUserType";//启动页类型
-    public static final String SP_KEY_VERSION_CODE           = "versioncode";//启动页类型
-    public static final String SP_KEY_CHANGEBG_CODE          = "changebg";//是否启用换肤图片
+
+    public static final String SP_KEY_SEARCH_HISTORY         = "searchHistory";//用户id
+
 }

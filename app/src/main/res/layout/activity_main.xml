@@ -11,7 +11,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/tool_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y46"
+        android:layout_height="@dimen/y26"
         android:textColor="@color/white"
         android:fitsSystemWindows="true"
         app:theme="@style/AppTheme.Toolbar"

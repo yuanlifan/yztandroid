@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y36">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:textColor="#1d1d1d"
+            android:background="@drawable/et_msg_shape"
+            android:layout_marginTop="@dimen/x6"
+            android:layout_marginBottom="@dimen/x6"
+            android:layout_marginLeft="@dimen/x9"
+            android:hint="请输入商品名称或品牌"
+            android:drawableLeft="@drawable/home_search"
+            android:drawablePadding="@dimen/x6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/x12"
+            android:padding="@dimen/x6"
+            android:singleLine="true"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:text="搜索"
+            android:textColor="@color/primary_text"
+            android:gravity="center"
+            android:textSize="@dimen/x14"
+            android:paddingRight="@dimen/x9"
+            android:paddingLeft="@dimen/x9"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_history_record"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/x12"
+        android:paddingRight="@dimen/x12"
+        android:paddingTop="@dimen/x6"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="历史搜索"
+                android:textSize="@dimen/x12"
+                android:textColor="@color/primary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_clear_history"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_alignParentRight="true"
+                android:layout_width="@dimen/x10"
+                android:layout_height="@dimen/x10" />
+
+        </RelativeLayout>
+
+        <!--流式布局-->
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tag_flow_layout1"
+            zhy:max_select="-1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/y5"
+            android:paddingBottom="@dimen/y5"
+            >
+
+        </com.zhy.view.flowlayout.TagFlowLayout>
+
+
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll_hot_search"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:text="热门搜索"-->
+            <!--android:textSize="@dimen/x12"-->
+            <!--android:textColor="@color/secondary_text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+        <!--&lt;!&ndash;流式布局&ndash;&gt;-->
+        <!--<com.zhy.view.flowlayout.TagFlowLayout-->
+            <!--android:id="@+id/id_flowlayout2"-->
+            <!--zhy:max_select="-1"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="20dp">-->
+        <!--</com.zhy.view.flowlayout.TagFlowLayout>-->
+
+    <!--</LinearLayout>-->
+
+
+
+</LinearLayout>

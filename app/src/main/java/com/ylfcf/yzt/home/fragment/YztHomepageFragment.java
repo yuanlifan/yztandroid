@@ -1,16 +1,24 @@
 package com.ylfcf.yzt.home.fragment;
 
 
+import android.animation.ObjectAnimator;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import com.flyco.tablayout.SlidingTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.ylfcf.yzt.R;
 import com.ylfcf.yzt.base.BaseFragment;
 import com.ylfcf.yzt.base.BasePagerAdapter;
@@ -18,9 +26,7 @@ import com.ylfcf.yzt.base.BaseViewPagerFragment;
 import com.ylfcf.yzt.home.itemfragment.YztCategotyItemFragment;
 import com.ylfcf.yzt.utils.ToastHelper;
 import com.ylfcf.yzt.view.CustomPopWindow;
-
 import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.OnClick;
 
@@ -29,8 +35,8 @@ import butterknife.OnClick;
  */
 public class YztHomepageFragment extends BaseFragment {
 
-    @Bind(R.id.sliding_tab)
-    SlidingTabLayout mSlidingTab;
+    @Bind(R.id.tabs)
+    SlidingTabLayout mTabLayout;
     @Bind(R.id.view_pager)
     ViewPager        mViewPager;
     @Bind(R.id.tv_pingdao)
@@ -38,31 +44,30 @@ public class YztHomepageFragment extends BaseFragment {
     @Bind(R.id.iv_arrow)
     ImageView        mIvArrow;
 
-    private ArrayList<BaseViewPagerFragment> fragments = new ArrayList<>();
-    private String[] mTitles = {"推荐", "新品", "众筹", "福利社", "限时购", "居家", "配件", "服装", "电器", "洗护", "饮食", "文体"};
-    private boolean isVisible = false;
-    private int mCurrentPage = 0;
+    private ArrayList<BaseViewPagerFragment> fragments    = new ArrayList<>();
+    private String[]                         mTitles      = {"首页", "绿色", "智慧", "健康", "轻奢", "财富", "生活"};
+    private boolean                          isVisible    = false;
+    private int                              mCurrentPage = 0;
     private CustomPopWindow mPopWindow;
+    private Animation mOperatingAnim;
 
     @Override
     protected void initData() {
         initFragments();
-        mViewPager.setAdapter(new BasePagerAdapter(getChildFragmentManager(), fragments));
-        mSlidingTab.setViewPager(mViewPager, mTitles);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        BasePagerAdapter adapter = new BasePagerAdapter(getChildFragmentManager(), fragments);
+        adapter.setTitles(mTitles);
+        mViewPager.setAdapter(adapter);
+        mTabLayout.setViewPager(mViewPager);
+        mTabLayout.setSnapOnTabClick(true);
+        mTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
+            public void onTabSelect(int position) {
                 mCurrentPage = position;
+                // 默认切换的时候，会有一个过渡动画，设为false后，取消动画，直接显示
+                mViewPager.setCurrentItem(position, false);
             }
-
             @Override
-            public void onPageScrollStateChanged(int state) {
-
+            public void onTabReselect(int position) {
             }
         });
 
@@ -70,7 +75,7 @@ public class YztHomepageFragment extends BaseFragment {
 
     private void initFragments() {
         fragments.clear();
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 7; i++) {
             fragments.add(new YztCategotyItemFragment());
         }
     }
@@ -95,14 +100,14 @@ public class YztHomepageFragment extends BaseFragment {
                 .setAnimationStyle(R.style.dialog_style)
                 //是否PopupWindow 以外触摸dissmiss
                 .create()//创建PopupWindow
-                .showAsDropDown(mSlidingTab,0,0);
+                .showAsDropDown(mTabLayout,0,0);
         mPopWindow.mPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
                 isVisible = false;
                 mTvPingdao.setVisibility(View.INVISIBLE);
-                mSlidingTab.setClickable(true);
-                mTvPingdao.setClickable(true);
+                mTabLayout.setClickable(true);
+                startAnim(mIvArrow, true);
             }
         });
     }
@@ -132,15 +137,27 @@ public class YztHomepageFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 ToastHelper.showAlert(mContext, content);
-                mViewPager.setCurrentItem(pos);
+                mViewPager.setCurrentItem(pos,false);
                 if(mPopWindow != null) {
                     mPopWindow.dissmiss();
                     mPopWindow = null;
                 }
             }
         });
-
         return tv;
+    }
+
+    private void startAnim(ImageView arrowImg, boolean isVisible) {
+        if(isVisible) {
+            mOperatingAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_anim_arrow2);
+        }else {
+            mOperatingAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_anim_arrow);
+        }
+        LinearInterpolator lin = new LinearInterpolator();
+        mOperatingAnim.setInterpolator(lin);
+        mOperatingAnim.setFillAfter(true);
+        arrowImg.setAnimation(mOperatingAnim);
+        arrowImg.startAnimation(mOperatingAnim);
     }
 
     @Override
@@ -153,19 +170,21 @@ public class YztHomepageFragment extends BaseFragment {
         if(isVisible) {
             mTvPingdao.setVisibility(View.INVISIBLE);
             isVisible = false;
-            mSlidingTab.setClickable(true);
-            mTvPingdao.setClickable(true);
+            mTabLayout.setClickable(true);
             if(mPopWindow != null) {
                 mPopWindow.dissmiss();
                 mPopWindow = null;
             }
+            startAnim(mIvArrow, true);
         }else {
             mTvPingdao.setVisibility(View.VISIBLE);
             isVisible = true;
             showPopupWindow();
-            mSlidingTab.setClickable(false);
-            mTvPingdao.setClickable(false);
+            mTabLayout.setClickable(false);
+
+            startAnim(mIvArrow,false);
         }
+
     }
 
 }

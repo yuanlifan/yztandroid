@@ -147,6 +147,10 @@ public class SharedPreferencesHelper {
         return sPreferences.getInt(key, 0);
     }
 
+    public int getInt(String key, int defaultVaule) {
+        return sPreferences.getInt(key, defaultVaule);
+    }
+
     public long getLong(String key) {
         return sPreferences.getLong(key, 0l);
     }

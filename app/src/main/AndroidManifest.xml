@@ -50,7 +50,8 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".home.MainActivity"></activity>
+        <activity android:name=".home.MainActivity" />
+        <activity android:name=".bycategory.BYSearchActivity"></activity>
     </application>
 
 </manifest>
