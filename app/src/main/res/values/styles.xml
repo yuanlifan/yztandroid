@@ -26,7 +26,7 @@
         <item name="actionMenuTextAppearance">@style/MenuTextStyle</item>
     </style>
 
-    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.Toolbar" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/rng_black</item>
         <item name="colorPrimaryDark">@color/rng_black</item>
         <item name="colorAccent">@color/rng_black</item>

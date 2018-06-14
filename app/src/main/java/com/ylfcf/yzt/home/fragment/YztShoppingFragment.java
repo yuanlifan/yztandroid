@@ -8,23 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ylfcf.yzt.R;
+import com.ylfcf.yzt.base.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class YztShoppingFragment extends Fragment {
-
-
-    public YztShoppingFragment() {
-        // Required empty public constructor
-    }
+public class YztShoppingFragment extends BaseFragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_yzt_shopping, container, false);
+    protected void initData() {
+
+
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.fragment_yzt_shopping;
     }
 
 }
