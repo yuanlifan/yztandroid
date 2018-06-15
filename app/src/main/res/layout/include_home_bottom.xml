@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/y46"
     android:layout_gravity="bottom"
-    android:orientation="horizontal"
     android:visibility="visible">
     <!--android:background="@color/rng_black"-->
     <ImageView
@@ -12,19 +11,19 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/tab_map_selected"
         android:button="@null"
         android:checked="true"
-        android:gravity="center" />
+        android:gravity="center"
+        android:src="@drawable/tab_map_selected" />
 
     <ImageView
         android:id="@+id/iv_bottom_find"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/tab_find_unselected"
         android:button="@null"
-        android:gravity="center" />
+        android:gravity="center"
+        android:src="@drawable/tab_find_unselected" />
 
 
     <ImageView
@@ -32,25 +31,25 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/tab_shop_unselected"
         android:button="@null"
-        android:gravity="center" />
+        android:gravity="center"
+        android:src="@drawable/tab_shop_unselected" />
 
     <ImageView
         android:id="@+id/iv_bottom_help"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/tab_help_unselected"
         android:button="@null"
-        android:gravity="center" />
+        android:gravity="center"
+        android:src="@drawable/tab_help_unselected" />
 
     <ImageView
         android:id="@+id/iv_bottom_person"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:src="@drawable/tab_person_unselected"
         android:button="@null"
-        android:gravity="center" />
+        android:gravity="center"
+        android:src="@drawable/tab_person_unselected" />
 </LinearLayout>

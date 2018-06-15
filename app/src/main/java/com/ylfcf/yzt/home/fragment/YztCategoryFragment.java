@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.ylfcf.yzt.R;
 import com.ylfcf.yzt.base.BaseFragment;
 import com.ylfcf.yzt.base.BasePagerAdapter;
@@ -18,9 +17,7 @@ import com.ylfcf.yzt.home.adapter.BYCategoryPagerAdapter;
 import com.ylfcf.yzt.home.itemfragment.YztCategotyItemFragment;
 import com.ylfcf.yzt.view.verticalviewpager.VerticalViewPager;
 import com.ylfcf.yzt.view.verticalviewpager.transforms.DefaultTransformer;
-
 import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

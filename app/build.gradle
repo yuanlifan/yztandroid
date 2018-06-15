@@ -45,34 +45,36 @@ android {
 
 dependencies {
     implementation 'com.android.support:support-v4:26.1.0'
-    androidTestCompile('com.android.support:support-annotations:26.1.0') {
+    androidTestImplementation('com.android.support:support-annotations:26.1.0') {
         force = true
     }
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //友盟分享
-    compile files('libs/umeng_social_api.jar')
-    compile files('libs/umeng_social_net.jar')
-    compile files('libs/umeng_social_tool.jar')
-    compile 'com.android.support:multidex:1.0.0'
+    implementation files('libs/umeng_social_api.jar')
+    implementation files('libs/umeng_social_net.jar')
+    implementation files('libs/umeng_social_tool.jar')
+    implementation 'com.android.support:multidex:1.0.0'
     //自动适配方案
-    compile 'com.google.code.gson:gson:2.6.2'
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'de.greenrobot:eventbus:2.4.0'
-    compile 'com.github.bumptech.glide:glide:3.6.1'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    compile 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
-    compile 'com.umeng.analytics:analytics:latest.integration'
-    implementation project(':verticaltablayout')
+    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation 'de.greenrobot:eventbus:2.4.0'
+    implementation 'com.github.bumptech.glide:glide:3.6.1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
+    implementation 'com.umeng.analytics:analytics:latest.integration'
+    //    implementation project(':verticaltablayout')
     //加载中，加载失败，空布局，网络异常，内容布局
     implementation 'com.classic.common:multiple-status-view:1.4'
     //常用标签
-    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     //流式布局
-    compile 'com.hyman:flowlayout-lib:1.1.2'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    implementation project(':verticaltablayout')
+
 }
