@@ -14,7 +14,7 @@
         android:button="@null"
         android:checked="true"
         android:gravity="center"
-        android:src="@drawable/tab_map_selected" />
+        android:src="@drawable/tab_firstpage_unselected" />
 
     <ImageView
         android:id="@+id/iv_bottom_find"
@@ -33,7 +33,7 @@
         android:layout_weight="1"
         android:button="@null"
         android:gravity="center"
-        android:src="@drawable/tab_shop_unselected" />
+        android:src="@drawable/tab_category_unselected" />
 
     <ImageView
         android:id="@+id/iv_bottom_help"
@@ -42,7 +42,7 @@
         android:layout_weight="1"
         android:button="@null"
         android:gravity="center"
-        android:src="@drawable/tab_help_unselected" />
+        android:src="@drawable/tab_shopping_unselected" />
 
     <ImageView
         android:id="@+id/iv_bottom_person"

@@ -102,14 +102,14 @@ public class MainActivity extends BaseActivity {
     void onBbClick() {
         changeFragment(0);
         mToolbar.setVisibility(View.GONE);
-        setViewClick(mIv_bottom_map, R.drawable.tab_map_selected);
+        setViewClick(mIv_bottom_map, R.drawable.tab_firstpage_selected);
     }
 
     @OnClick(R.id.iv_bottom_find)
     void onFindClick() {
         changeFragment(1);
         mToolbar.setVisibility(View.VISIBLE);
-        mTvTitle.setText("分类");
+        mTvTitle.setText("发现");
         setViewClick(mIv_bottom_find, R.drawable.tab_find_selected);
     }
 
@@ -117,8 +117,8 @@ public class MainActivity extends BaseActivity {
     void onCenterClick() {
         changeFragment(2);
         mToolbar.setVisibility(View.VISIBLE);
-        mTvTitle.setText("消息");
-        setViewClick(mIv_bottom_shop, R.drawable.tab_shop_selected);
+        mTvTitle.setText("分类");
+        setViewClick(mIv_bottom_shop, R.drawable.tab_category_selected);
     }
 
     @OnClick(R.id.iv_bottom_help)
@@ -126,7 +126,7 @@ public class MainActivity extends BaseActivity {
         changeFragment(3);
         mToolbar.setVisibility(View.VISIBLE);
         mTvTitle.setText("购物车");
-        setViewClick(mIv_bottom_help, R.drawable.tab_help_selected);
+        setViewClick(mIv_bottom_help, R.drawable.tab_shopping_selected);
     }
 
     @OnClick(R.id.iv_bottom_person)
@@ -138,10 +138,10 @@ public class MainActivity extends BaseActivity {
     }
 
     public void setViewClick(ImageView rb, int resId) {
-        setView(mIv_bottom_map, R.drawable.tab_map_unselected);
+        setView(mIv_bottom_map, R.drawable.tab_firstpage_unselected);
         setView(mIv_bottom_find, R.drawable.tab_find_unselected);
-        setView(mIv_bottom_shop, R.drawable.tab_shop_unselected);
-        setView(mIv_bottom_help, R.drawable.tab_help_unselected);
+        setView(mIv_bottom_shop, R.drawable.tab_category_unselected);
+        setView(mIv_bottom_help, R.drawable.tab_shopping_unselected);
         setView(mIv_bottom_person, R.drawable.tab_person_unselected);
         setView(rb, resId);
     }
@@ -197,11 +197,11 @@ public class MainActivity extends BaseActivity {
             mYztHomepageFragment = new YztHomepageFragment();
             fragment = mYztHomepageFragment;
         } else if (position == 1) {
-            mYztCategoryFragment = new YztCategoryFragment();
-            fragment = mYztCategoryFragment;
-        } else if (position == 2) {
             mYztMsgFragment = new YztMsgFragment();
             fragment = mYztMsgFragment;
+        } else if (position == 2) {
+            mYztCategoryFragment = new YztCategoryFragment();
+            fragment = mYztCategoryFragment;
         } else if (position == 3) {
             mYztShoppingFragment = new YztShoppingFragment();
             fragment = mYztShoppingFragment;
@@ -217,8 +217,8 @@ public class MainActivity extends BaseActivity {
      */
     private void initFragments() {
         fragments.add(mYztHomepageFragment);
-        fragments.add(mYztCategoryFragment);
         fragments.add(mYztMsgFragment);
+        fragments.add(mYztCategoryFragment);
         fragments.add(mYztShoppingFragment);
         fragments.add(mYztPersonalFragment);
     }

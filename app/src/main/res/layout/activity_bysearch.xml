@@ -20,6 +20,7 @@
             android:layout_marginBottom="@dimen/x6"
             android:layout_marginLeft="@dimen/x9"
             android:hint="请输入商品名称或品牌"
+            android:textColorHint="@color/secondary_text"
             android:drawableLeft="@drawable/home_search"
             android:drawablePadding="@dimen/x6"
             android:layout_width="0dp"

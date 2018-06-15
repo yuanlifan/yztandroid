@@ -16,6 +16,7 @@
             android:background="@drawable/et_msg_shape"
             android:layout_margin="@dimen/x6"
             android:hint="搜索商品，共1200款好物"
+            android:textColorHint="@color/secondary_text"
             android:drawableLeft="@drawable/home_search"
             android:drawablePadding="@dimen/x6"
             android:paddingLeft="@dimen/x6"
