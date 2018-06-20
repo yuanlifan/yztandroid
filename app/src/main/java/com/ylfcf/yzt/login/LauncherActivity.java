@@ -59,7 +59,7 @@ public class LauncherActivity extends FragmentActivity {
 //                Intent intent = new Intent(this, LoadingActivity.class);
 //                startActivity(intent);
 //            }
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
         } else {

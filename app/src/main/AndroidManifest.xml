@@ -37,16 +37,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".login.LoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".home.MainActivity" />
-
-        <activity android:name=".bycategory.BYSearchActivity"></activity>
-
+        <activity android:name=".bycategory.BYSearchActivity" />
+        <activity android:name=".login.RegisterActivity"></activity>
     </application>
 
 </manifest>
