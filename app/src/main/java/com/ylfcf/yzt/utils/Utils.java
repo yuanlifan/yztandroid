@@ -208,13 +208,14 @@ public class Utils {
      */
     public static void onClearLogoutUserData() {
         SharedPreferencesHelper mSharedPreferencesHelper = SharedPreferencesHelper.getInstance();
-        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_LOGIN_ID, "");
-        String userId = SharedPreferencesHelper.getInstance().getString(AppSpContact.SP_KEY_LOGIN_ID);
+        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_USER_ID, "");
+        String userId = SharedPreferencesHelper.getInstance().getString(AppSpContact.SP_KEY_USER_ID);
         Log.i(TAG, "onClearLogoutUserData: -userId：" + userId);
-        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_LOGIN_PWD, "");
         mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_USER_TOKEN, "");
-        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_USER_NICK_NAME, "");
-        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_USER_AVATAR, "");
+
+        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_LOGIN_PWD, "");//密码
+        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_USER_NICK_NAME, "");//昵称
+        mSharedPreferencesHelper.putString(AppSpContact.SP_KEY_USER_AVATAR, "");//头像
     }
 
     /**

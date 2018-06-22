@@ -163,7 +163,6 @@ public class HttpManager {
             }
         });
 
-
     }
 
     private void sendFailure(final Call call, final IOException e, final MyCallBack myCallBack) {

@@ -3,6 +3,12 @@ package com.ylfcf.yzt.http;
 
 import android.os.Build;
 
+import com.ylfcf.yzt.appconfig.AppSpContact;
+import com.ylfcf.yzt.appconfig.URLConfig;
+import com.ylfcf.yzt.http.base.BaseModel;
+import com.ylfcf.yzt.http.model.UserLoginModel;
+import com.ylfcf.yzt.utils.SharedPreferencesHelper;
+
 
 /**
  * @author yangjinxin  create by 2017/8/22 19:32
@@ -38,14 +44,28 @@ public class NethHandle {
 //        return SharedPreferencesHelper.getInstance().getString(AppSpContact.SP_KEY_LOGIN_ID);
 //    }
 
-//    private HttpManager getBaseParam() {
-//        return HttpManager.getHttpManager().addParam("signature", signature).addParam("timestamp", timestamp);
-//    }
+    private HttpManager getBaseParam() {
+        return HttpManager.getHttpManager();
+    }
 //
 //    private HttpManager getUserParam() {
 //        return HttpManager.getHttpManager().addParam("signature", signature).addParam("timestamp", timestamp)
 //                .addParam("token", getUserToken()).addParam("uid", getUserId());
 //    }
+
+    /**
+     * 用户登录
+     */
+    public void getUserLogin(String phone, String password, MyCallBack<UserLoginModel> callBack) {
+        getBaseParam().addParam("phone", phone).addParam("pwd", password).post(URLConfig.getBaseUrl() + "/users/login", callBack);
+    }
+
+    /**
+     * 用户注册
+     */
+    public void getUserRegister(String phone, String password, MyCallBack<UserLoginModel> callBack) {
+        getBaseParam().addParam("phone", phone).addParam("pwd", password).post(URLConfig.getBaseUrl() + "/users/register", callBack);
+    }
 
     public void removeAllMessage() {
         HttpManager.getHttpManager().removeAllMessage();
