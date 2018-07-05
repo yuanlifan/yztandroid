@@ -5,6 +5,11 @@ import android.os.Looper;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.ylfcf.yzt.MainApp;
+import com.ylfcf.yzt.http.base.BaseModel;
+import com.ylfcf.yzt.utils.HttpResultGsonDeserializer;
+import com.ylfcf.yzt.utils.ToastHelper;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -39,8 +44,10 @@ public class HttpManager {
         //设置写超时
         mOkHttpClient.newBuilder().writeTimeout(10, TimeUnit.SECONDS);
 
-        mGson = new Gson();
-
+//        mGson = new Gson();
+        mGson = new GsonBuilder()
+                .registerTypeAdapter(BaseModel.class, new HttpResultGsonDeserializer())
+                .create();
         //创建handler用来将数据操作，设置到主线程中
         mHandler = new Handler(Looper.getMainLooper());
         params = new HashMap<>();
@@ -157,8 +164,13 @@ public class HttpManager {
                     myCallBack.onSuccess(call, json);
                 } else {
                     Log.e("返回json数据",json);
-                    Object o = mGson.fromJson(json, myCallBack.type);
-                    myCallBack.onSuccess(call, o);
+                    Object o = null;
+                    try {
+                        o = mGson.fromJson(json, myCallBack.type);
+                        myCallBack.onSuccess(call, o);
+                    }catch(Exception e) {
+                        ToastHelper.showAlert(MainApp.getContext(), "数据解析异常");
+                    }
                 }
             }
         });

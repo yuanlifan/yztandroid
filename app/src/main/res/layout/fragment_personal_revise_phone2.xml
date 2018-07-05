@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".personcenter.fragment.PersonalRevisePhone1Fragment">
+
+    <ImageView
+        android:src="@drawable/mine_verify_phone"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y37">
+
+        <EditText
+            android:textSize="@dimen/x12"
+            android:gravity="center_vertical"
+            android:padding="@dimen/x6"
+            android:hint="请输入手机号"
+            android:textColorHint="@color/secondary_text"
+            android:textColor="@color/primary_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="获取验证码"
+            android:layout_marginRight="@dimen/x12"
+            android:textColor="@color/by_red_main"
+            android:padding="@dimen/x6"
+            android:textSize="@dimen/x12"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_normal_tv_red_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"/>
+
+    <EditText
+        android:id="@+id/et_adress_detail"
+        android:textSize="@dimen/x12"
+        android:gravity="center_vertical"
+        android:padding="@dimen/x6"
+        android:hint="请输入短信验证码"
+        android:textColorHint="@color/secondary_text"
+        android:textColor="@color/primary_text"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y37" />
+
+    <TextView
+        android:text="确定"
+        android:textSize="@dimen/x12"
+        android:padding="@dimen/x9"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/y32"
+        android:layout_marginLeft="@dimen/x26"
+        android:layout_marginRight="@dimen/x26"
+        android:textColor="@color/white"
+        android:background="@drawable/selector_normal_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

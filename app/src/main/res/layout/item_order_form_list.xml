@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/y8"
+    android:background="@color/color_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="@dimen/x8"
+        android:layout_height="@dimen/x32">
+
+        <TextView
+            android:text="订单编号:54165146314646"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/x11"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="等待买家付款"
+            android:textColor="@color/by_red_main"
+            android:textSize="@dimen/x11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="@dimen/x10"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88">
+
+        <ImageView
+            android:src="@color/by_red_main"
+            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/x66"
+            android:layout_height="@dimen/x66" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:paddingLeft="@dimen/x10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="五常大米"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/x12"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="¥8888.88"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/x12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="@dimen/x10"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/x6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="五斤装/袋"
+                    android:textColor="@color/normal_text"
+                    android:textSize="@dimen/x11"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="¥123"
+                    android:textColor="@color/normal_text"
+                    android:textSize="@dimen/x11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:padding="@dimen/x6"
+        android:layout_height="@dimen/x32">
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="共123件商品"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/normal_text"
+            android:textSize="@dimen/x11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text=" 合计:¥123456.789"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/x11"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text=" (含运费:¥0.00)"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/normal_text"
+            android:textSize="@dimen/x11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y42">
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="取消订单"
+            android:padding="@dimen/x6"
+            android:gravity="center"
+            android:textSize="@dimen/x10"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/x9"
+            android:textColor="@color/primary_text"
+            android:background="@drawable/shape_tv_normal2"
+            android:layout_width="@dimen/x56"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:text="确  认"
+            android:textSize="@dimen/x10"
+            android:layout_marginRight="@dimen/x9"
+            android:padding="@dimen/x6"
+            android:gravity="center"
+            android:textColor="@color/by_red_main"
+            android:background="@drawable/shape_tv_press2"
+            android:layout_width="@dimen/x56"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

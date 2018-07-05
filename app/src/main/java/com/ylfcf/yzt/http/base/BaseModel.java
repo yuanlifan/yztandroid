@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * @author yangjinxin  create by 2017/8/22 19:41
  * @Description
  */
-public class BaseModel implements Parcelable {
+public class BaseModel<T> implements Parcelable {
 
     /**
      * time : 2018-06-21 13:35:09
@@ -18,6 +18,7 @@ public class BaseModel implements Parcelable {
     private String time;
     private int    error_id;
     private String error;
+    private T msg;
 
     public BaseModel() {
 
@@ -63,6 +64,14 @@ public class BaseModel implements Parcelable {
 
     public void setError(String error) {
         this.error = error;
+    }
+
+    public T getMsg() {
+        return msg;
+    }
+
+    public void setMsg(T msg) {
+        this.msg = msg;
     }
 
     @Override

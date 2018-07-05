@@ -30,27 +30,43 @@
 
            <TextView
                android:text="+86"
-               android:textSize="@dimen/x10"
+               android:textSize="@dimen/x11"
                android:textColor="@color/black"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content" />
 
-           <EditText
-               android:layout_marginLeft="@dimen/x3"
-               android:id="@+id/et_number"
+           <LinearLayout
+               android:paddingLeft="@dimen/x3"
+               android:orientation="horizontal"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:background="@null"
-               android:gravity="center_vertical"
-               android:hint="手机号"
-               android:drawableRight="@drawable/phone_number_detele_icon"
-               android:inputType="phone"
-               android:maxLength="11"
-               android:paddingBottom="@dimen/y3"
-               android:paddingRight="@dimen/x2"
-               android:textColorHint="@color/secondary_text"
-               android:textColor="@color/primary_text"
-               android:textSize="@dimen/x10" />
+               android:layout_height="wrap_content">
+
+               <EditText
+                   android:id="@+id/et_phone_number"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content"
+                   android:background="@null"
+                   android:gravity="center_vertical"
+                   android:hint="请输入登录账号"
+                   android:inputType="phone"
+                   android:maxLength="11"
+                   android:paddingBottom="@dimen/y3"
+                   android:textColorHint="@color/secondary_text"
+                   android:textColor="@color/primary_text"
+                   android:textSize="@dimen/x11" />
+
+               <ImageView
+                   android:id="@+id/iv_detele"
+                   android:visibility="invisible"
+                   android:paddingBottom="@dimen/y3"
+                   android:paddingRight="@dimen/x2"
+                   android:layout_alignParentRight="true"
+                   android:src="@drawable/phone_number_detele_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+
+           </LinearLayout>
 
        </LinearLayout>
 
@@ -61,59 +77,6 @@
         <!--android:layout_marginLeft="@dimen/x15"-->
 
     </LinearLayout>
-
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_marginLeft="@dimen/x44"-->
-        <!--android:layout_marginRight="@dimen/x44"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="@dimen/y38">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:gravity="center"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<EditText-->
-                <!--android:id="@+id/et_image_test"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:background="@null"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:hint="图片验证码"-->
-                <!--android:imeActionLabel="登录"-->
-                <!--android:imeOptions="actionDone"-->
-                <!--android:paddingRight="@dimen/x2"-->
-                <!--android:inputType="textPassword"-->
-                <!--android:paddingBottom="@dimen/y3"-->
-                <!--android:textColor="@color/primary_text"-->
-                <!--android:textColorHint="@color/secondary_text"-->
-                <!--android:textSize="@dimen/x10" />-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="@dimen/x1"-->
-                <!--android:background="@color/secondary_text" />-->
-
-        <!--</LinearLayout>-->
-
-        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
-            <!--&lt;!&ndash;android:src="@drawable/shape_tv_gray"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_marginLeft="@dimen/x6"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:paddingBottom="@dimen/y12"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="@dimen/x86"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="match_parent" />&ndash;&gt;-->
-
-        <!--<com.ylfcf.yzt.view.VerifyCode-->
-            <!--android:id="@+id/verify_view"-->
-            <!--android:layout_marginLeft="@dimen/x6"-->
-            <!--android:layout_marginBottom="@dimen/y12"-->
-            <!--android:layout_width="@dimen/x86"-->
-            <!--android:layout_height="match_parent" />-->
-
-    <!--</LinearLayout>-->
 
     <LinearLayout
         android:orientation="horizontal"
@@ -129,21 +92,38 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/message_test"
+            <LinearLayout
+                android:paddingLeft="@dimen/x3"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:hint="短信验证码"
-                android:imeActionLabel="登录"
-                android:imeOptions="actionDone"
-                android:paddingRight="@dimen/x2"
-                android:inputType="textPassword"
-                android:paddingBottom="@dimen/y3"
-                android:textColor="@color/primary_text"
-                android:textColorHint="@color/secondary_text"
-                android:textSize="@dimen/x10" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_message"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请输入短信验证码"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingBottom="@dimen/y3"
+                    android:textColorHint="@color/secondary_text"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/x11" />
+
+                <ImageView
+                    android:id="@+id/iv_detele2"
+                    android:visibility="invisible"
+                    android:paddingBottom="@dimen/y3"
+                    android:paddingRight="@dimen/x2"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/phone_number_detele_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -157,10 +137,11 @@
             android:text="获取验证码"
             android:gravity="center"
             android:textColor="@color/by_red_main"
+            android:textSize="@dimen/x11"
             android:background="@drawable/selector_tv_register"
             android:layout_marginLeft="@dimen/x6"
             android:layout_marginBottom="@dimen/y12"
-            android:layout_width="@dimen/x86"
+            android:layout_width="@dimen/x76"
             android:layout_height="match_parent" />
 
     </LinearLayout>
@@ -173,23 +154,47 @@
         android:gravity="center"
         android:orientation="vertical">
 
-
-        <EditText
-            android:id="@+id/et_pwd"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:drawableRight="@drawable/password_hide_icon"
-            android:gravity="center_vertical"
-            android:hint="设置密码(6-16位字母数字组合)"
-            android:imeActionLabel="登录"
-            android:imeOptions="actionDone"
-            android:paddingRight="@dimen/x2"
-            android:inputType="textPassword"
-            android:paddingBottom="@dimen/y3"
-            android:textColor="@color/primary_text"
-            android:textColorHint="@color/secondary_text"
-            android:textSize="@dimen/x10" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="设置密码(6-16位字母数字组合)"
+                android:textColorHint="@color/secondary_text"
+                android:textColor="@color/primary_text"
+                android:imeActionLabel="登录"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:paddingBottom="@dimen/y5"
+                android:textSize="@dimen/x11" />
+
+            <ImageView
+                android:id="@+id/iv_detele3"
+                android:visibility="invisible"
+                android:layout_marginRight="@dimen/x3"
+                android:paddingBottom="@dimen/y3"
+                android:paddingRight="@dimen/x2"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/phone_number_detele_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_hide"
+                android:paddingBottom="@dimen/y3"
+                android:paddingRight="@dimen/x2"
+                android:src="@drawable/password_hide_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -216,55 +221,39 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/y12"
-        android:layout_marginLeft="@dimen/x50"
-        android:layout_marginRight="@dimen/x44"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:layout_height="wrap_content">
 
         <TextView
             android:text="用户注册代表同意"
-            android:textSize="@dimen/x10"
-            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/x11"
             android:textColor="@color/normal_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:text="《服务条款》"
-            android:textSize="@dimen/x10"
-            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/x11"
             android:textColor="@color/by_red_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:text="和"
-            android:textSize="@dimen/x10"
-            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/x11"
             android:textColor="@color/normal_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:text="《隐私政策》"
-            android:textSize="@dimen/x10"
-            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/x11"
             android:textColor="@color/by_red_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_login"
-        android:text="登录"
-        android:textSize="@dimen/x10"
-        android:layout_marginTop="@dimen/y12"
-        android:drawableRight="@drawable/text_right_icon"
-        android:drawablePadding="@dimen/x5"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/normal_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>

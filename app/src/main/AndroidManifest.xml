@@ -44,7 +44,13 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".home.MainActivity" />
         <activity android:name=".bycategory.BYSearchActivity" />
-        <activity android:name=".login.RegisterActivity"></activity>
+        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".personcenter.PersonalSafeActivity" />
+        <activity android:name=".personcenter.PersonalAdressActivity" />
+        <activity android:name=".personcenter.PersonalAdressListActivity" />
+        <activity android:name=".personcenter.PersonalRevisePhoneActivity" />
+        <activity android:name=".personcenter.PersonalRevisePasswordActivity" />
+        <activity android:name=".personcenter.PersonalOrderFormActivity" />
     </application>
 
 </manifest>

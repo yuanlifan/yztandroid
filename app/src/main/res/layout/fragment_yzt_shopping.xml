@@ -1,12 +1,128 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/color_bg"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.ylfcf.yzt.home.fragment.YztShoppingFragment">
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/rl_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y44">
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/rl_toptitlebar_back"-->
+            <!--android:layout_width="@dimen/x50"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="@drawable/register_back_title_icon" />-->
+        <!--</RelativeLayout>-->
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="购物车"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/x14"/>
 
 
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="@dimen/x56"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/normal_text"
+            android:textSize="@dimen/x12"/>
 
 
+    </RelativeLayout>
+
+    <com.ajguan.library.EasyRefreshLayout
+        android:id="@+id/easylayout"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_bg">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.ajguan.library.EasyRefreshLayout>
+
+    <View
+        android:background="@color/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y36">
+
+        <CheckBox
+            android:layout_marginLeft="@dimen/x9"
+            android:id="@+id/cb_choose_all"
+            android:layout_gravity="center_vertical"
+            android:button="@drawable/selector_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="全选"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/x6"
+            android:textSize="@dimen/x12"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:text="合计 :   "
+            android:gravity="center"
+            android:textSize="@dimen/x12"
+            android:textColor="@color/primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:text="¥0.00"
+            android:gravity="center"
+            android:textSize="@dimen/x12"
+            android:textColor="@color/by_red_main"
+            android:layout_marginRight="@dimen/x9"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_buy"
+            android:text="结算(0)"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x12"
+            android:gravity="center"
+            android:background="@color/by_red_main"
+            android:layout_width="@dimen/x96"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -26,6 +26,7 @@ import com.ylfcf.yzt.home.fragment.YztHomepageFragment;
 import com.ylfcf.yzt.home.fragment.YztMsgFragment;
 import com.ylfcf.yzt.home.fragment.YztPersonalFragment;
 import com.ylfcf.yzt.home.fragment.YztShoppingFragment;
+import com.ylfcf.yzt.login.LoginActivity;
 import com.ylfcf.yzt.utils.StringHelper;
 import com.ylfcf.yzt.utils.ToastHelper;
 
@@ -70,32 +71,20 @@ public class MainActivity extends BaseActivity {
     private YztMsgFragment      mYztMsgFragment;
     private YztShoppingFragment mYztShoppingFragment;
     private YztPersonalFragment mYztPersonalFragment;
+    private int currentPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-//        setImmerseLayout(mToolbar);
         setUpViewComponent();//初始化所有
-//        Utils.setWindowStatusBarColor(this, R.color.transparent);
     }
-
-//    protected void setImmerseLayout(View view) {
-//        //当系统版本为4.4或者4.4以上时可以使用沉浸式状态栏
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            Window window = getWindow();
-//            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            int statusBarHeight = getStatusBarHeight(this.getBaseContext());
-//            view.setPadding(0, statusBarHeight, 0, 0);
-//        }
-//    }
 
     private void setUpViewComponent() {
         initFragments();
-//        showUserAvatar(mSharedPreferencesHelper.getString(AppSpContact.SP_KEY_USER_AVATAR));
         changeFragment(0);
-
+        setViewClick(mIv_bottom_map, R.drawable.tab_firstpage_selected);
     }
 
     @OnClick(R.id.iv_bottom_map)
@@ -124,17 +113,22 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.iv_bottom_help)
     void onMsgClick() {
         changeFragment(3);
-        mToolbar.setVisibility(View.VISIBLE);
+        mToolbar.setVisibility(View.GONE);
         mTvTitle.setText("购物车");
         setViewClick(mIv_bottom_help, R.drawable.tab_shopping_selected);
     }
 
     @OnClick(R.id.iv_bottom_person)
     void onProfileClick() {
-        changeFragment(4);
-        mToolbar.setVisibility(View.VISIBLE);
-        mTvTitle.setText("个人");
-        setViewClick(mIv_bottom_person, R.drawable.tab_person_selected);
+        if(TextUtils.isEmpty(mSharedPreferencesHelper.getString(AppSpContact.SP_KEY_USER_ID))||
+                TextUtils.isEmpty(mSharedPreferencesHelper.getString(AppSpContact.SP_KEY_USER_TOKEN))) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }else {
+            changeFragment(4);
+            mToolbar.setVisibility(View.GONE);
+            mTvTitle.setText("个人");
+            setViewClick(mIv_bottom_person, R.drawable.tab_person_selected);
+        }
     }
 
     public void setViewClick(ImageView rb, int resId) {
@@ -149,8 +143,6 @@ public class MainActivity extends BaseActivity {
     private void setView(ImageView rb, int resId) {
         rb.setImageResource(resId);
     }
-
-    private int currentPosition = 0;
 
     /**
      * 切换Fragment
@@ -222,15 +214,6 @@ public class MainActivity extends BaseActivity {
         fragments.add(mYztShoppingFragment);
         fragments.add(mYztPersonalFragment);
     }
-//    /**
-//     * 显示用户头像
-//     */
-//    private void showUserAvatar(String userAvatar) {
-//        if (StringHelper.notEmpty(userAvatar))
-//            Glide.with(this).load(userAvatar).into(mIvUserAvatar);
-//        else
-//            mIvUserAvatar.setImageResource(R.drawable.sidebar_default_head_icon);
-//    }
 
     private long mExitTime = 0;
 

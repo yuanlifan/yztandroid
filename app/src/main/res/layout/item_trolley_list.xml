@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:padding="@dimen/x6"
+    android:layout_marginTop="@dimen/y6"
+    android:layout_height="@dimen/y78">
+
+    <CheckBox
+        android:id="@+id/cb_choose_item"
+        android:layout_marginLeft="@dimen/x3"
+        android:layout_gravity="center_vertical"
+        android:button="@drawable/selector_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:src="#009dff"
+        android:layout_marginLeft="@dimen/x9"
+        android:layout_gravity="center_vertical"
+        android:layout_width="@dimen/y62"
+        android:layout_height="@dimen/y62" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/x9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="散装闲粽"
+            android:textSize="@dimen/x12"
+            android:textColor="@color/primary_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="蛋黄肉粽 (四只装)"
+            android:textSize="@dimen/x12"
+            android:layout_marginTop="@dimen/y2"
+            android:textColor="@color/secondary_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_money_trolley"
+                android:text="¥ 21.9"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/x12"
+                android:textColor="@color/by_red_main"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_remove_trolley"
+                android:text="－"
+                android:background="@drawable/shopping_remove_icon"
+                android:gravity="center"
+                android:textColor="@color/normal_text"
+                android:textSize="@dimen/x12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_number_trolley"
+                android:text="1"
+                android:background="@drawable/shopping_number_icon"
+                android:gravity="center"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/x12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_add_trolley"
+                android:text="＋"
+                android:background="@drawable/shopping_add_icon"
+                android:gravity="center"
+                android:textColor="@color/normal_text"
+                android:textSize="@dimen/x12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,16 +1,209 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@color/color_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="个人中心"
-        android:textColor="@color/red_a3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+   <LinearLayout
+       android:orientation="horizontal"
+       android:background="@color/primary_text"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/y88">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+          android:layout_marginLeft="@dimen/x16"
+          android:src="@drawable/sidebar_default_head_icon"
+          android:layout_gravity="center_vertical"
+          android:layout_width="@dimen/x56"
+          android:layout_height="@dimen/x56" />
+
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_marginLeft="@dimen/x8"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+         <TextView
+             android:text="手机号/用户名"
+             android:textColor="@color/white"
+             android:textSize="@dimen/x12"
+             android:layout_marginTop="@dimen/y26"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+
+         <TextView
+             android:text="普通用户"
+             android:textSize="@dimen/x10"
+             android:layout_marginTop="@dimen/y6"
+             android:textColor="@color/white"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+
+      </LinearLayout>
 
 
+   </LinearLayout>
 
+   <LinearLayout
+       android:id="@+id/ll_order_form"
+       android:layout_marginTop="@dimen/y6"
+       android:orientation="horizontal"
+       android:background="@color/white"
+       android:padding="@dimen/x12"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <TextView
+          android:text="我的订单"
+          android:textColor="@color/primary_text"
+          android:textSize="@dimen/x12"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content" />
+
+      <TextView
+          android:text="更多"
+          android:drawableRight="@drawable/text_right_icon"
+          android:drawablePadding="@dimen/x6"
+          android:textColor="@color/primary_text"
+          android:textSize="@dimen/x10"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+   </LinearLayout>
+
+   <View
+       android:background="@color/divider"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/x1"/>
+
+   <LinearLayout
+       android:background="@color/white"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <ImageView
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/order_shopping1"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/order_shopping2"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/order_shopping3"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/order_shopping4"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/order_shopping5"
+          android:layout_height="wrap_content" />
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_marginTop="@dimen/y6"
+       android:orientation="horizontal"
+       android:background="@color/white"
+       android:padding="@dimen/x12"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <TextView
+          android:text="我的服务"
+          android:textColor="@color/primary_text"
+          android:textSize="@dimen/x12"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+   </LinearLayout>
+
+   <View
+       android:background="@color/color_bg"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/x1"/>
+
+   <LinearLayout
+       android:background="@color/white"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <ImageView
+          android:id="@+id/iv_personal_item1"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/personal_item_icon1"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:id="@+id/iv_personal_item2"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/personal_item_icon2"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:id="@+id/iv_personal_item3"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/personal_item_icon3"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:id="@+id/iv_personal_item4"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/personal_item_icon4"
+          android:layout_height="wrap_content" />
+
+
+   </LinearLayout>
+
+   <View
+       android:background="@color/divider"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/x1"/>
+
+   <LinearLayout
+       android:background="@color/white"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <ImageView
+          android:id="@+id/iv_personal_item5"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/personal_item_icon1"
+          android:layout_height="wrap_content" />
+
+      <ImageView
+          android:id="@+id/iv_personal_item6"
+          android:layout_weight="1"
+          android:layout_width="0dp"
+          android:src="@drawable/personal_item_icon1"
+          android:layout_height="wrap_content" />
+
+      <View
+          android:layout_weight="2"
+          android:layout_width="0dp"
+          android:layout_height="match_parent" />
+
+   </LinearLayout>
 
 
 </LinearLayout>

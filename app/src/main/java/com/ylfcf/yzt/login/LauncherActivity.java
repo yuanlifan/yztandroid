@@ -1,9 +1,15 @@
 package com.ylfcf.yzt.login;
 
+import android.os.Build;
+import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+
 import com.ylfcf.yzt.R;
 import com.ylfcf.yzt.appconfig.AppSpContact;
 import com.ylfcf.yzt.base.BasePagerAdapter;
@@ -24,53 +30,51 @@ import butterknife.ButterKnife;
  * @Description 启动页
  */
 public class LauncherActivity extends FragmentActivity {
-    @Bind(R.id.view_pager)
-    CustomViewPager viewPager;
-    @Bind(R.id.ci_img)
-    CircleIndicator ciImg;
-
 
     public BasePagerAdapter mAdapter;
     private ArrayList<BaseViewPagerFragment> mFragments = new ArrayList<>();
+    private Handler mHandler = new Handler();
+    private CustomViewPager mViewPager;
+    private CircleIndicator mCiImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         boolean isFirstLauncher = SharedPreferencesHelper.getInstance().getBoolean(AppSpContact.SP_KEY_FIRST_LAUNCHER, true);
-//        int versionCode = SharedPreferencesHelper.getInstance().getInt(AppSpContact.SP_KEY_VERSION_CODE);  //大版本更新使用
-//        if (versionCode == 0) {
-//            SharedPreferencesHelper.getInstance().putInt(AppSpContact.SP_KEY_VERSION_CODE, Utils.getVersionCode());
-//            Utils.onClearLogoutUserData();
-//            isFirstLauncher = true;
-//        } else {
-//            if (Utils.getVersionCode() > versionCode) {
-//                Utils.onClearLogoutUserData();
-//                isFirstLauncher = true;
-//            } else {
-//                SharedPreferencesHelper.getInstance().putInt(AppSpContact.SP_KEY_VERSION_CODE, versionCode);
-//            }
-//        }
         if (!isFirstLauncher) {//不是第一次启动
-//            String loginId = SharedPreferencesHelper.getInstance().getString(AppSpContact.SP_KEY_LOGIN_ID);
-//            if (StringHelper.isEmpty(loginId)) {
-//                Intent intent = new Intent(this, LoadingNextActivity.class);
-//                startActivity(intent);
-//            } else {
-//                Intent intent = new Intent(this, LoadingActivity.class);
-//                startActivity(intent);
-//            }
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-            finish();
+            initWindow();
+            setContentView(R.layout.activity_splash);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(LauncherActivity.this, MainActivity.class));
+                    LauncherActivity.this.finish();
+                }
+            }, 2000);
         } else {
             setContentView(R.layout.activity_launcher);
-            ButterKnife.bind(this);
             setUpViewComponent();
             SharedPreferencesHelper.getInstance().putBoolean(AppSpContact.SP_KEY_FIRST_LAUNCHER, false);
         }
     }
 
+    private void initWindow() {
+        //控制底部虚拟键盘
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            //让虚拟键盘一直不显示
+            Window window = getWindow();
+            WindowManager.LayoutParams params = window.getAttributes();
+            params.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE;
+            window.setAttributes(params);
+        }
+    }
+
     private void setUpViewComponent() {
+        mViewPager = findViewById(R.id.view_pager);
+        mCiImg = findViewById(R.id.ci_img);
         setUpFragments();
         setUpViewPager();
     }
@@ -84,11 +88,11 @@ public class LauncherActivity extends FragmentActivity {
 
     private void setUpViewPager() {
         mAdapter = new BasePagerAdapter(getSupportFragmentManager(), mFragments);
-        viewPager.setOffscreenPageLimit(5);
-        viewPager.setAdapter(mAdapter);
-        viewPager.setScrollable(true);
-        ciImg.setViewCount(5, 0);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setAdapter(mAdapter);
+        mViewPager.setScrollable(true);
+        mCiImg.setViewCount(5, 0);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -96,8 +100,8 @@ public class LauncherActivity extends FragmentActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (ciImg != null) {
-                    ciImg.onPageSelected(position);
+                if (mCiImg != null) {
+                    mCiImg.onPageSelected(position);
                 }
             }
 

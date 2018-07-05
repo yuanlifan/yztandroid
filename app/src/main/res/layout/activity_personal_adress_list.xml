@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/color_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_topbar"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y44">
+
+        <RelativeLayout
+            android:id="@+id/rl_toptitlebar_back"
+            android:layout_width="@dimen/x50"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/register_back_title_icon" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/x14"/>
+
+        <TextView
+            android:id="@+id/tv_finish"
+            android:visibility="invisible"
+            android:text="完成"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/x12"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_width="@dimen/x56"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <!--<FrameLayout-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp">-->
+
+        <com.ajguan.library.EasyRefreshLayout
+            android:id="@+id/easylayout"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/color_bg">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.ajguan.library.EasyRefreshLayout>
+
+        <!--<include-->
+            <!--layout="@layout/base_recycle_empty"-->
+            <!--android:visibility="gone"/>-->
+
+    <!--</FrameLayout>-->
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y36">
+
+        <TextView
+            android:id="@+id/tv_editor"
+            android:text="管理"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/x12"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_add_address"
+            android:text="添加新地址"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x12"
+            android:gravity="center"
+            android:background="@color/by_red_main"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

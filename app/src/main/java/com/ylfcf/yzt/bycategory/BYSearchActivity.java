@@ -1,33 +1,23 @@
 package com.ylfcf.yzt.bycategory;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.ylfcf.yzt.R;
 import com.ylfcf.yzt.appconfig.AppSpContact;
 import com.ylfcf.yzt.base.BaseActivity;
 import com.ylfcf.yzt.bycategory.adapter.BySearchTagAdapter;
 import com.ylfcf.yzt.utils.SearchUtils;
 import com.zhy.view.flowlayout.FlowLayout;
-import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
-
 import java.util.List;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
